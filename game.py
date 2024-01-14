@@ -1,7 +1,7 @@
 import os
 import random
 import math
-import pygame
+import pygame, sys
 from os import listdir
 from os.path import isfile, join
 pygame.init()
@@ -306,6 +306,9 @@ def main(window):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE and player.jump_count < 2:
                     player.jump()
+                if event.key == pygame.K_x:
+                    run = False
+                    sys.exit()
 
         player.loop(FPS)
         fire.loop()
