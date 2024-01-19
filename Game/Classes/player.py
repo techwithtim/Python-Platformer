@@ -27,6 +27,7 @@ class Player(pygame.sprite.Sprite):
         self.jump_count = 0
         self.hit = False
         self.hit_count = 0
+        self.health = 3
 
     def jump(self):
         self.y_vel = -self.GRAVITY * 8
@@ -60,9 +61,14 @@ class Player(pygame.sprite.Sprite):
 
         if self.hit:
             self.hit_count += 1
-        if self.hit_count > fps * 2:
+            if self.hit_count == 1:
+                self.health -= self.hit_count
+        if self.hit_count > fps:
             self.hit = False
             self.hit_count = 0
+            
+        
+            
 
         self.fall_count += 1
         self.update_sprite()
