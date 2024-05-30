@@ -1,3 +1,3 @@
-# Python-Platformer
+# Death by Yoyo
 
-test
+My first game experiment! Forked from Tech with Tim's Python Platformer repo.
